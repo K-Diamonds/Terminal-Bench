@@ -1,0 +1,24 @@
+# Harbor 0.18.0 JobConfig — local DATASET semantics only (not registry tasks).
+#
+# Run from repository root:
+#   harbor run -c config/harbor-lease-queue-fencing-oracle-docker.yaml -o evaluation/harbor-config-smoke
+#
+# Schema: harbor.models.job.config.JobConfig (harbor run --print-config)
+#
+# MUST use datasets[].path + task_names (local discovery).
+# MUST NOT use top-level tasks: [{ name: ... }] — that is registry resolve_task_version.
+# MUST NOT reference the Viewer registry default package task.
+
+job_name: lease-queue-fencing-oracle-docker
+jobs_dir: evaluation/harbor-config-smoke
+
+datasets:
+  - path: tasks
+    task_names:
+      - lease-queue-fencing
+
+agents:
+  - name: oracle
+
+environment:
+  type: docker

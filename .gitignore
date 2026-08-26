@@ -1,0 +1,15 @@
+tb3-upstream/
+evaluation/harbor-*/
+evaluation/single-*/
+evaluation/pre-submit-*/
+evaluation/negative-probes/
+evaluation/negative-probes-v2/
+evaluation/*.log
+.DS_Store
+.env
+*.pem
+**/auth.json
+**/credentials*
+__pycache__/
+*.pyc
+.colima/

@@ -1,0 +1,15 @@
+{
+  "passed": false,
+  "status": "SKIPPED_BY_USER",
+  "checks": {},
+  "missing": ["ALL — no verdicts.json"],
+  "failed": [],
+  "prior_attempt": {
+    "status": "BLOCKED",
+    "error": "Credit balance is too low",
+    "classification": "INVALID — billing/API",
+    "trial": "jobs/rubric-review-final/rubric-review-final-0001__yDCcUi3",
+    "command": "harbor exec -a claude-code -m sonnet"
+  },
+  "note": "Not a task-quality FAIL. Rubric agent could not complete under API credits; subscription OAuth was not completed."
+}

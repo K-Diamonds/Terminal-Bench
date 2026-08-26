@@ -1,0 +1,133 @@
+{
+  "task": "lease-queue-fencing",
+  "evidence_schema_version": 2,
+  "task_content_commit": "e8bb5f4f152ee4fa7ed96874be2cbe66e68c1f1a",
+  "task_tree_fingerprint": "2c824a3e667a2b74740b97a086e6f5dcf7f5fb1c2db4396b5964cb2582bcba2f",
+  "task_fingerprint_file": "evaluation/task-fingerprint.txt",
+  "tb3_baseline_sha": "d4df6e5744d6fee3ad0ee411c8b50c95b125a251",
+  "evidence_generated_from_commit": "e8bb5f4f152ee4fa7ed96874be2cbe66e68c1f1a",
+  "evidence_note": "Task/verifier evidence is keyed by task_content_commit + task_tree_fingerprint. Later documentation-only commits do not invalidate trials. Do not stamp repository HEAD into this file.",
+  "harbor_version_local": "0.18.0",
+  "harbor_version_tb3_run_cheat_workflows": "0.14.0",
+  "recorded_at_utc": "2026-08-26T19:50:00Z",
+  "backends": {
+    "local_validate": "docker",
+    "tb3_run_cheat_default": "modal",
+    "tb3_validate_default": "modal",
+    "note": "Docker local evidence is for smoke. Modal oracle/nop below are CI-equivalent validate evidence."
+  },
+  "checks": {
+    "static_checks": {
+      "status": "PASS",
+      "count": 22,
+      "log": "evaluation/static-checks-9597744.log",
+      "upstream_sha": "9597744614a56cb5d7d52d22a9fa087b7249256c",
+      "reconfirmed_upstream_sha": "d4df6e5744d6fee3ad0ee411c8b50c95b125a251",
+      "task_fingerprint": "2c824a3e667a2b74740b97a086e6f5dcf7f5fb1c2db4396b5964cb2582bcba2f",
+      "exit_code": 0
+    },
+    "implementation_rubric": {
+      "status": "SKIPPED_BY_USER",
+      "blocker_type": "payment_credits",
+      "reason": "Attempted harbor exec rubric with ANTHROPIC_API_KEY; agent failed with 'Credit balance is too low' (no verdicts.json). Claude subscription OAuth (claude setup-token) was not completed. User directed to stop waiting on paid API credits. Not a fabricated FAIL of task quality.",
+      "prior_attempt": {
+        "status": "BLOCKED",
+        "error": "Credit balance is too low",
+        "command": "harbor exec -a claude-code -m sonnet",
+        "trial": "jobs/rubric-review-final/rubric-review-final-0001__yDCcUi3",
+        "harbor_version": "0.18.0"
+      },
+      "report": "evaluation/rubric-check_report.json",
+      "log": "evaluation/rubric-final.log",
+      "recorded_at_utc": "2026-08-26T19:50:00Z"
+    },
+    "docker_build": {
+      "status": "PASS",
+      "task_fingerprint": "2c824a3e667a2b74740b97a086e6f5dcf7f5fb1c2db4396b5964cb2582bcba2f"
+    },
+    "modal_validate": {
+      "status": "PASS",
+      "oracle_reward": 1.0,
+      "nop_reward": 0.0,
+      "task_fingerprint": "2c824a3e667a2b74740b97a086e6f5dcf7f5fb1c2db4396b5964cb2582bcba2f",
+      "harbor_version": "0.18.0",
+      "oracle_output": "evaluation/harbor-modal-oracle/modal-oracle-final",
+      "nop_output": "evaluation/harbor-modal-nop/modal-nop-final"
+    },
+    "secret_scan": {
+      "status": "PASS"
+    }
+  },
+  "oracle": [
+    {"run": 1, "reward": 1.0, "valid": true, "backend": "docker", "task_fingerprint": "2c824a3e667a2b74740b97a086e6f5dcf7f5fb1c2db4396b5964cb2582bcba2f", "output_dir": "evaluation/harbor-oracle-v2-1"},
+    {"run": 2, "reward": 1.0, "valid": true, "backend": "docker", "task_fingerprint": "2c824a3e667a2b74740b97a086e6f5dcf7f5fb1c2db4396b5964cb2582bcba2f", "output_dir": "evaluation/harbor-oracle-v2-2"},
+    {"run": 3, "reward": 1.0, "valid": true, "backend": "docker", "task_fingerprint": "2c824a3e667a2b74740b97a086e6f5dcf7f5fb1c2db4396b5964cb2582bcba2f", "output_dir": "evaluation/harbor-oracle-v2-3"},
+    {"run": 4, "reward": 1.0, "valid": true, "backend": "docker", "task_fingerprint": "2c824a3e667a2b74740b97a086e6f5dcf7f5fb1c2db4396b5964cb2582bcba2f", "output_dir": "evaluation/harbor-oracle-v2-4"},
+    {"run": 5, "reward": 1.0, "valid": true, "backend": "docker", "task_fingerprint": "2c824a3e667a2b74740b97a086e6f5dcf7f5fb1c2db4396b5964cb2582bcba2f", "output_dir": "evaluation/harbor-oracle-v2-5"}
+  ],
+  "nop": {
+    "reward": 0.0,
+    "valid": true,
+    "backend": "docker",
+    "task_fingerprint": "2c824a3e667a2b74740b97a086e6f5dcf7f5fb1c2db4396b5964cb2582bcba2f",
+    "output_dir": "evaluation/harbor-nop-v2"
+  },
+  "modal_oracle": {
+    "reward": 1.0,
+    "valid": true,
+    "backend": "modal",
+    "task_fingerprint": "2c824a3e667a2b74740b97a086e6f5dcf7f5fb1c2db4396b5964cb2582bcba2f",
+    "output_dir": "evaluation/harbor-modal-oracle/modal-oracle-final",
+    "trial": "lease-queue-fencing__ii2SNgz",
+    "harbor_version": "0.18.0",
+    "recorded_at_utc": "2026-08-26T19:36:57Z"
+  },
+  "modal_nop": {
+    "reward": 0.0,
+    "valid": true,
+    "backend": "modal",
+    "task_fingerprint": "2c824a3e667a2b74740b97a086e6f5dcf7f5fb1c2db4396b5964cb2582bcba2f",
+    "output_dir": "evaluation/harbor-modal-nop/modal-nop-final",
+    "trial": "lease-queue-fencing__zyEGArV",
+    "harbor_version": "0.18.0",
+    "recorded_at_utc": "2026-08-26T19:36:57Z"
+  },
+  "negative_probes": [
+    {"name": "no_implementation", "reward": 0.0, "valid": true, "task_fingerprint": "2c824a3e667a2b74740b97a086e6f5dcf7f5fb1c2db4396b5964cb2582bcba2f"},
+    {"name": "memory_only", "reward": 0.0, "valid": true, "task_fingerprint": "2c824a3e667a2b74740b97a086e6f5dcf7f5fb1c2db4396b5964cb2582bcba2f"},
+    {"name": "no_fencing", "reward": 0.0, "valid": true, "task_fingerprint": "2c824a3e667a2b74740b97a086e6f5dcf7f5fb1c2db4396b5964cb2582bcba2f"},
+    {"name": "fence_reset_reopen", "reward": 0.0, "valid": true, "task_fingerprint": "2c824a3e667a2b74740b97a086e6f5dcf7f5fb1c2db4396b5964cb2582bcba2f"},
+    {"name": "receipt_is_completion", "reward": 0.0, "valid": true, "task_fingerprint": "2c824a3e667a2b74740b97a086e6f5dcf7f5fb1c2db4396b5964cb2582bcba2f"},
+    {"name": "wrong_worker_accepted", "reward": 0.0, "valid": true, "task_fingerprint": "2c824a3e667a2b74740b97a086e6f5dcf7f5fb1c2db4396b5964cb2582bcba2f"},
+    {"name": "reopen_noop", "reward": 0.0, "valid": true, "task_fingerprint": "2c824a3e667a2b74740b97a086e6f5dcf7f5fb1c2db4396b5964cb2582bcba2f"},
+    {"name": "hardcoded_visible", "reward": 0.0, "valid": true, "task_fingerprint": "2c824a3e667a2b74740b97a086e6f5dcf7f5fb1c2db4396b5964cb2582bcba2f"},
+    {"name": "fence_skip_cheat", "reward": 0.0, "valid": true, "task_fingerprint": "2c824a3e667a2b74740b97a086e6f5dcf7f5fb1c2db4396b5964cb2582bcba2f"}
+  ],
+  "standard_trials": [],
+  "cheat_trials": [],
+  "invalid_trials_discarded": [],
+  "codex_status": {
+    "status": "SKIPPED_BY_USER",
+    "standard_trials": "NOT RUN",
+    "cheat": "NOT RUN",
+    "reason": "No Codex subscription login completed (~/.codex/auth.json absent). User directed not to pursue paid API-key path. No Codex standard or /cheat trials executed.",
+    "recorded_at_utc": "2026-08-26T19:50:00Z"
+  },
+  "claude_status": {
+    "status": "SKIPPED_BY_USER",
+    "standard_trials": "NOT RUN",
+    "cheat": "NOT RUN",
+    "reason": "Anthropic API key credit balance too low on rubric attempt; Claude subscription OAuth (claude setup-token) not completed. User directed to stop on payment/credits. No Claude standard or /cheat trials executed.",
+    "recorded_at_utc": "2026-08-26T19:50:00Z"
+  },
+  "ready_for_frontier_trials": false,
+  "submission_ready": false,
+  "blockers": [
+    "Implementation rubric SKIPPED_BY_USER — API credits unavailable; subscription OAuth not completed",
+    "Codex standard ×3 SKIPPED_BY_USER / NOT RUN",
+    "Claude standard ×3 SKIPPED_BY_USER / NOT RUN",
+    "Codex /cheat SKIPPED_BY_USER / NOT RUN",
+    "Claude /cheat SKIPPED_BY_USER / NOT RUN",
+    "TB3 hiring matrix incomplete without frontier Codex+Claude evidence and rubric PASS"
+  ]
+}
